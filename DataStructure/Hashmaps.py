@@ -28,6 +28,18 @@ class HashMap:
                     return self.datamap[index][i][1]
         return None
                 
+    def removeValuefromHash(self,key): 
+        index = self.__hash__(key)
+        if self.datamap[index] != None: 
+            for  i in range(len(self.datamap)): 
+              if self.datamap[index][i][0] == key: 
+                  val =  self.datamap[index][i][1]
+                  self.datamap[index].remove([key,val])
+                  if self.datamap[index] == []: 
+                      self.datamap[index] = None 
+                  return True
+        return False
+                
             
     
     
